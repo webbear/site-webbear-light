@@ -30,7 +30,7 @@ class Utilities {
 
 			if($item->hasChildren() && $maxDepth) {
 				if($class == 'nav') $class = 'nav nav-tree';
-				$out .= $this->renderNav($item->children, $maxDepth-1, $fieldNames, $class);
+				$out .= $this->renderNav($item->children, $maxDepth-1, $fieldNames, $class, $excludeTemplates);
 			}
 
 			$out .= "</li>";
