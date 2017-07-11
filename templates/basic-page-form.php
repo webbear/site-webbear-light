@@ -2,6 +2,7 @@
 
 if ($page->form_name) {
 	$form = $forms->render($page->form_name);
+
 	$headScript .= $form->styles;
 	$headScript .= $form->scripts;
 	

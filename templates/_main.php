@@ -10,7 +10,7 @@
 	<?php endif; ?>
 
 	<link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="<?=$wb->makeAssetLink(urls('templates').'css/main-light.css') ?>" media="all" />
+	<link rel="stylesheet" type="text/css" href="<?=$wb->makeAssetLink(urls('templates').'css/main.css') ?>" media="all" />
     <link rel="stylesheet" type="text/css" href="<?=$wb->makeAssetLink(urls('templates').'js/lightcase/src/css/lightcase.css') ?>" media="all" />
 	<script src="<?=$wb->makeAssetLink(urls('templates').'js/vendors/modernizr.custom.js') ?>"></script>
     <script src="<?=$wb->makeAssetLink(urls('templates').'js/libs/jquery.min.js') ?>"></script>
@@ -22,7 +22,7 @@
 	<?=$headScript?>
 	<link rel="icon" type="image/x-icon" href="<?=$wb->makeAssetLink(urls('templates') .'images/favicon.ico')?>" />
 </head>
-<body id="top" class="<?php if($sidebar) echo "has-sidebar"; ?>">
+<body id="top" class="<?php if($sidebar) {echo "has-sidebar";} else {echo "full-width";}?>">
 
 
 <div class="container">
@@ -32,7 +32,7 @@
 		<div class="top-bar">
 			<nav class="top-nav">
 				<ul class='topnav'>
-					<?=$wb->renderNavigation($homepage->children->prepend($homepage), $options = array('tree' => 2, 'excluded_pages' => $navExcludedPages, 'excluded_templates' => $navExcludedTemplates))?>
+					<?=$wb->renderNavigation($homepage->children->prepend($homepage), array('tree' => 2, 'excluded_pages' => $navExcludedPages, 'excluded_templates' => $navExcludedTemplates))?>
 				</ul>
 			</nav>
 		</div>
